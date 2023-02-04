@@ -32,8 +32,11 @@ IF(WIN32)
         DEBUG_POSTFIX "d")
 ENDIF(WIN32)
 
-SET_TARGET_PROPERTIES(lib3ds
-    PROPERTIES VERSION 2.0)
+SET_TARGET_PROPERTIES(lib3ds PROPERTIES 
+    VERSION 2.0
+)
+
+target_include_directories(lib3ds PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Install Rules	
 install (TARGETS lib3ds DESTINATION "lib")
